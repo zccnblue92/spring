@@ -106,7 +106,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring-mybatis.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+              <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -948,8 +948,16 @@
       <workItem from="1514855515317" duration="19247000" />
       <workItem from="1514940434676" duration="3399000" />
       <workItem from="1515029552150" duration="3269000" />
-      <workItem from="1515058167454" duration="38000" />
+      <workItem from="1515058167454" duration="254000" />
     </task>
+    <task id="LOCAL-00001" summary="666">
+      <created>1515058214772</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1515058214772</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -961,7 +969,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224730000" />
+    <option name="totallyTimeSpent" value="224946000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1020,6 +1028,12 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="666" />
+    <option name="LAST_COMMIT_MESSAGE" value="666" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1323,7 +1337,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/spring-mybatis.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+          <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
           <folding />
         </state>
       </provider>
