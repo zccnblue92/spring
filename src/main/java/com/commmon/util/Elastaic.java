@@ -27,15 +27,15 @@ public class Elastaic {
     private TransportClient client;
 
    public TransportClient  client() {
-     /*  Settings settings = Settings.builder().put("cluster.name", "zc").put("client.transport.sniff", true).build();
+       Settings settings = Settings.builder().put("cluster.name", "zc").put("client.transport.sniff", true).build();
        try {
            client = new PreBuiltTransportClient(settings).addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("127.0.0.1"),9300));
        } catch (UnknownHostException e) {
            e.printStackTrace();
-       }*/
-       Settings settings = Settings.builder()
+       }
+      /* Settings settings = Settings.builder()
                .put("cluster.name", "sojson-application").build();
-       client = TransportClient.builder().settings(settings).build();
+       client = TransportClient.builder().settings(settings).build();*/
        return client;
     }
 
