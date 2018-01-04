@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Dao.UserDao">
+	<resultMap id="User" type="com.Vo.User">
+			<result property="id" column="id" />
+			<result property="name" column="name" />
+			<result property="age" column="age" />
+			<result property="job" column="job" />
+	</resultMap>
+	<select id="get" parameterType="Integer" resultMap="User">
+		select
+		   *
+		from `User`
+		where `id` = #{id}
+	</select>
+	<select id="getlist" parameterType="Integer" resultMap="User">
+		select
+		*
+		from `User`
+	</select>
+	
+	<update id="update" parameterType="com.Vo.User">
+        update `User` 
+    	<set>
+			<if test="memberId != null">`member_id`= #{memberId},</if>
+			<if test="memberName != null">`member_name`= #{memberName},</if>
+			<if test="provinceId != null">`province_id`= #{provinceId},</if>
+			<if test="cityId != null">`city_id`= #{cityId},</if>
+			<if test="areaId != null">`area_id`= #{areaId},</if>
+			<if test="addAll != null">`add_all`= #{addAll},</if>
+			<if test="addressInfo != null">`address_info`= #{addressInfo},</if>
+			<if test="mobile != null">`mobile`= #{mobile},</if>
+			<if test="phone != null">`phone`= #{phone},</if>
+			<if test="email != null">`email`= #{email},</if>
+			<if test="zipCode != null">`zip_code`= #{zipCode},</if>
+			<if test="state != null">`state`= #{state},</if>
+			<!-- <if test="createTime != null">`create_time`= #{createTime},</if> -->
+			`update_time`= now()
+	    </set>
+        where `id` = #{id}
+	</update>
+	
+	<insert id="save" parameterType="com.Vo.User" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+		insert into `User`
+		(
+			`member_id`,
+			`member_name`,
+			`province_id`,
+			`city_id`,
+			`area_id`,
+			`add_all`,
+			`address_info`,
+			`mobile`,
+			`phone`,
+			`email`,
+			`zip_code`,
+			`state`,
+			`create_time`
+		)
+		values
+		(
+			#{memberId},
+			#{memberName},
+			#{provinceId},
+			#{cityId},
+			#{areaId},
+			#{addAll},
+			#{addressInfo},
+			#{mobile},
+			#{phone},
+			#{email},
+			#{zipCode},
+			#{state},
+			now()
+		)
+	</insert>
+
+	<select id="getMemberAddressesCount" resultType="Integer">
+		select
+		   count(*)
+		from `User`
+		where `member_id` = #{memberId}
+	</select>
+
+	<select id="getMemberAddresses" resultMap="User">
+		select
+		   *
+		from `User`
+		where `member_id` = #{memberId}
+		order by `id` desc
+		<if test="size != null and size &gt; 0">limit #{start},#{size}</if>
+	</select>
+	
+	<update id="updateNotDefByMId">
+        update `User`
+        set `state` = 2,
+        	`update_time` = now()
+        where `member_id` = #{memberId}
+        	and `id` != #{id}
+	</update>
+	
+	<!-- 删除记录 -->
+	<delete id="delete">
+		delete from `User`  where `id` = #{id}
+	</delete>
+	
+	<delete id="deleteByIdAndMId">
+		delete from `User`  where `id` = #{id} and `member_id` = #{memberId}
+	</delete>
+</mapper>
